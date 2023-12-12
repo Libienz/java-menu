@@ -36,9 +36,11 @@ public class MessageResolver {
     }
 
     public String resolveCategoryMessage(MenuCategoriesDto menuCategoriesDto) {
-        return formatValuesMessage(menuCategoriesDto.getMenuCategories());
+        List<String> menuCategories = menuCategoriesDto.getMenuCategories();
+        menuCategories.add(0, "카테고리");
+        return formatValuesMessage(menuCategories);
     }
-
+    
     public String resolveFoodScheduleMessage(FoodScheduleDto foodScheduleDto) {
         List<String> foodSchedule = foodScheduleDto.getFoodSchedule();
         foodSchedule.add(0, foodScheduleDto.getCoachName());
