@@ -27,6 +27,10 @@ public class MessageResolver {
         return GREETING_MESSAGE;
     }
 
+    public String resolveResultPrefixMessage() {
+        return RESULT_MESSAGE_PREFIX;
+    }
+
     public String resolveCategoryMessage(MenuCategoriesDto menuCategoriesDto) {
         return formatValuesMessage(menuCategoriesDto.getMenuCategories());
     }
