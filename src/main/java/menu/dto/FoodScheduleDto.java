@@ -12,7 +12,7 @@ public class FoodScheduleDto {
         this.foodSchedule = foodSchedule;
     }
 
-    public FoodScheduleDto from(Coach coach) {
+    public static FoodScheduleDto from(Coach coach) {
         return new FoodScheduleDto(coach.getName(), coach.getFoodSchedule());
     }
 

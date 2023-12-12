@@ -10,7 +10,7 @@ public class MenuCategoriesDto {
         this.menuCategories = menuCategories;
     }
 
-    public MenuCategoriesDto from(SelectedCategories selectedCategories) {
+    public static MenuCategoriesDto from(SelectedCategories selectedCategories) {
         return new MenuCategoriesDto(selectedCategories.getSelectedCategoryNames());
     }
 
