@@ -1,5 +1,6 @@
 package menu.view;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,6 +20,10 @@ public class InputMapper {
     }
 
     public InedibleFoods mapToInedible(String input) {
+        if (input.isEmpty()) {
+            return new InedibleFoods(new ArrayList<FoodMenu>());
+        }
+        
         List<FoodMenu> inedible = Arrays.stream(input.split(DELIMITER))
                 .map(FoodMenu::from)
                 .collect(Collectors.toList());
