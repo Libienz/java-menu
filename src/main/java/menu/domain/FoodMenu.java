@@ -37,7 +37,7 @@ public enum FoodMenu {
         this.description = description;
     }
 
-    public FoodMenu from(String name) {
+    public static FoodMenu from(String name) {
         return Arrays.stream(FoodMenu.values())
                 .filter(foodMenu -> foodMenu.description.equals(name))
                 .findFirst()
