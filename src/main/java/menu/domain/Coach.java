@@ -32,4 +32,8 @@ public class Coach {
         }
         return suggestedFoods.add(suggestion);
     }
+
+    public List<FoodMenu> getSuggestedFoods() {
+        return suggestedFoods;
+    }
 }
