@@ -57,6 +57,7 @@ public class MainController {
 
         //결과 출력
         outputView.printResultPrefixMessage();
+        outputView.printDayOfWeekMessage();
         outputView.printMenuCategoriesMessage(MenuCategoriesDto.from(selectedCategories));
         coaches.stream()
                 .map(FoodScheduleDto::from)

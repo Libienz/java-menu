@@ -31,6 +31,10 @@ public class MessageResolver {
         return RESULT_MESSAGE_PREFIX;
     }
 
+    public String resolveDayOfWeekMessage() {
+        return formatValuesMessage(List.of("구분", "월요일", "화요일", "수요일", "목요일", "금요일"));
+    }
+
     public String resolveCategoryMessage(MenuCategoriesDto menuCategoriesDto) {
         return formatValuesMessage(menuCategoriesDto.getMenuCategories());
     }

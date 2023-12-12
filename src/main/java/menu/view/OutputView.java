@@ -18,6 +18,10 @@ public class OutputView {
         System.out.println(messageResolver.resolveResultPrefixMessage());
     }
 
+    public void printDayOfWeekMessage() {
+        System.out.println(messageResolver.resolveDayOfWeekMessage());
+    }
+
     public void printMenuCategoriesMessage(MenuCategoriesDto menuCategoriesDto) {
         System.out.println(messageResolver.resolveCategoryMessage(menuCategoriesDto));
     }
