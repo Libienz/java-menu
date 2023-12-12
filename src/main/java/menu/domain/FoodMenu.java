@@ -3,6 +3,8 @@ package menu.domain;
 import static menu.domain.MenuCategory.JAPANESE;
 import static menu.domain.MenuCategory.KOREAN;
 
+import java.util.Arrays;
+
 public enum FoodMenu {
     //일식: 규동, 우동, 미소시루, 스시, 가츠동, 오니기리, 하이라이스, 라멘, 오코노미야끼
     JAPANESE_MENU_1(JAPANESE, "규동"),
@@ -25,12 +27,21 @@ public enum FoodMenu {
     KOREAN_MENU_8(KOREAN, "떡볶이"),
     KOREAN_MENU_9(KOREAN, "제육볶음");
 
+    private static final String NO_SUCH_MENU_MESSAGE = "[ERROR] 해당하는 메뉴를 찾을 수 없습니다";
+
     private final MenuCategory menuCategory;
     private final String description;
 
     FoodMenu(MenuCategory menuCategory, String description) {
         this.menuCategory = menuCategory;
         this.description = description;
+    }
+
+    public FoodMenu from(String name) {
+        return Arrays.stream(FoodMenu.values())
+                .filter(foodMenu -> foodMenu.description.equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(NO_SUCH_MENU_MESSAGE));
     }
 
     public MenuCategory getMenuCategory() {
