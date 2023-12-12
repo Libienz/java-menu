@@ -31,7 +31,7 @@ public class Coach {
     }
 
     public List<String> getFoodSchedule() {
-        return foodSchedule.getSchedule().values().stream()
+        return foodSchedule.getSchedule().stream()
                 .map(FoodMenu::getDescription)
                 .collect(Collectors.toList());
     }
