@@ -14,6 +14,10 @@ public class CoachNames {
         this.coachNames = coachNames;
     }
 
+    public List<CoachName> getCoachNames() {
+        return coachNames;
+    }
+
     private void validate(List<CoachName> coachNames) {
         validateSize(coachNames);
     }
