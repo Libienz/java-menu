@@ -23,6 +23,10 @@ public class MessageResolver {
         return String.format(INPUT_COACH_INEDIBLE_MESSAGE_FORMAT, coachName);
     }
 
+    public String resolveGreetingMessage() {
+        return GREETING_MESSAGE;
+    }
+
     public String resolveCategoryMessage(MenuCategoriesDto menuCategoriesDto) {
         return formatValuesMessage(menuCategoriesDto.getMenuCategories());
     }
