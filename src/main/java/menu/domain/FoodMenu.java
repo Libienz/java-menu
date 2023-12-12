@@ -4,6 +4,8 @@ import static menu.domain.MenuCategory.JAPANESE;
 import static menu.domain.MenuCategory.KOREAN;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public enum FoodMenu {
     //일식: 규동, 우동, 미소시루, 스시, 가츠동, 오니기리, 하이라이스, 라멘, 오코노미야끼
@@ -42,6 +44,13 @@ public enum FoodMenu {
                 .filter(foodMenu -> foodMenu.description.equals(name))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(NO_SUCH_MENU_MESSAGE));
+    }
+
+    public static List<String> findByCategory(MenuCategory menuCategory) {
+        return Arrays.stream(FoodMenu.values())
+                .filter(foodMenu -> foodMenu.menuCategory.equals(menuCategory))
+                .map(FoodMenu::getDescription)
+                .collect(Collectors.toList());
     }
 
     public MenuCategory getMenuCategory() {
