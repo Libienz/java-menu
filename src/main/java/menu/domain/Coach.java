@@ -1,6 +1,8 @@
 package menu.domain;
 
 import java.time.DayOfWeek;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Coach {
     private final CoachName coachName;
@@ -22,5 +24,15 @@ public class Coach {
         }
         foodSchedule.addSchedule(dayOfWeek, foodMenu);
         return true;
+    }
+
+    public String getName() {
+        return coachName.getName();
+    }
+
+    public List<String> getFoodSchedule() {
+        return foodSchedule.getSchedule().values().stream()
+                .map(FoodMenu::getDescription)
+                .collect(Collectors.toList());
     }
 }

@@ -14,4 +14,8 @@ public class FoodSchedule {
     public boolean contains(FoodMenu foodMenu) {
         return schedule.containsValue(foodMenu);
     }
+
+    public Map<DayOfWeek, FoodMenu> getSchedule() {
+        return schedule;
+    }
 }
