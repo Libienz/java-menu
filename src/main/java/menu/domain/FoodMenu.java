@@ -52,15 +52,15 @@ public enum FoodMenu {
     ASIAN_MENU_9("분짜", ASIAN),
 
     //양식
-    WESTERN_MENU_1("라자냐", ASIAN),
-    WESTERN_MENU_2("그라탱", ASIAN),
-    WESTERN_MENU_3("뇨끼", ASIAN),
-    WESTERN_MENU_4("끼슈", ASIAN),
-    WESTERN_MENU_5("프렌치 토스트", ASIAN),
-    WESTERN_MENU_6("바게트", ASIAN),
-    WESTERN_MENU_7("스파게티", ASIAN),
-    WESTERN_MENU_8("피자", ASIAN),
-    WESTERN_MENU_9("파니니", ASIAN);
+    WESTERN_MENU_1("라자냐", WESTERN),
+    WESTERN_MENU_2("그라탱", WESTERN),
+    WESTERN_MENU_3("뇨끼", WESTERN),
+    WESTERN_MENU_4("끼슈", WESTERN),
+    WESTERN_MENU_5("프렌치 토스트", WESTERN),
+    WESTERN_MENU_6("바게트", WESTERN),
+    WESTERN_MENU_7("스파게티", WESTERN),
+    WESTERN_MENU_8("피자", WESTERN),
+    WESTERN_MENU_9("파니니", WESTERN);
 
     private static final String NO_SUCH_FOOD_MESSAGE = "[ERROR] 해당하는 음식을 찾을 수 없습니다";
     private final String description;
