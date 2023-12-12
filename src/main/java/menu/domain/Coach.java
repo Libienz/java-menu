@@ -1,0 +1,26 @@
+package menu.domain;
+
+import java.time.DayOfWeek;
+
+public class Coach {
+    private final CoachName coachName;
+    private final InedibleFoods inedibleFoods;
+    private final FoodSchedule foodSchedule;
+
+    public Coach(CoachName coachName, InedibleFoods inedibleFoods, FoodSchedule foodSchedule) {
+        this.coachName = coachName;
+        this.inedibleFoods = inedibleFoods;
+        this.foodSchedule = foodSchedule;
+    }
+
+    public boolean addSchedule(DayOfWeek dayOfWeek, FoodMenu foodMenu) {
+        if (inedibleFoods.contains(foodMenu)) {
+            return false;
+        }
+        if (foodSchedule.contains(foodMenu)) {
+            return false;
+        }
+        foodSchedule.addSchedule(dayOfWeek, foodMenu);
+        return true;
+    }
+}
