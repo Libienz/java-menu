@@ -1,12 +1,17 @@
 package menu.dto;
 
 import java.util.List;
+import menu.domain.SelectedCategories;
 
 public class MenuCategoriesDto {
     private final List<String> menuCategories;
 
-    public MenuCategoriesDto(List<String> menuCategories) {
+    private MenuCategoriesDto(List<String> menuCategories) {
         this.menuCategories = menuCategories;
+    }
+
+    public MenuCategoriesDto from(SelectedCategories selectedCategories) {
+        return new MenuCategoriesDto(selectedCategories.getSelectedCategoryNames());
     }
 
     public List<String> getMenuCategories() {
