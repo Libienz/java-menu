@@ -21,10 +21,12 @@ public class OutputMessageResolver {
         List<String> daysOfWeek = List.of("구분", "월요일", "화요일", "수요일", "목요일", "금요일");
         return resolveArrayListMessage(daysOfWeek);
     }
+
     public String resolveSelectedCategoryMessage(List<FoodCategory> foodCategories) {
-        return resolveArrayListMessage(foodCategories.stream()
-                .map(FoodCategory::getDescription)
-                .collect(Collectors.toList()));
+        List<String> form = new ArrayList<>();
+        form.add("카테고리");
+        foodCategories.forEach(foodCategory -> form.add(foodCategory.getDescription()));
+        return resolveArrayListMessage(form);
     }
 
     public String resolveCoachFoodsMessage(Coach coach) {

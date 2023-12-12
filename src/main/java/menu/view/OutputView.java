@@ -20,6 +20,7 @@ public class OutputView {
     }
 
     public void printResult(List<Coach> coaches, List<FoodCategory> categories) {
+        System.out.println("메뉴 추천 결과입니다.");
         System.out.println(outputMessageResolver.resolveDayOfWeekMessage());
         System.out.println(outputMessageResolver.resolveSelectedCategoryMessage(categories));
         coaches.forEach(coach -> System.out.println(outputMessageResolver.resolveCoachFoodsMessage(coach)));

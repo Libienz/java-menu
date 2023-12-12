@@ -35,9 +35,8 @@ public class MenuSuggestionController {
         List<Coach> coaches = new ArrayList<>();
 
         for (CoachName coachName : coachNames.getCoachNames()) {
-            InedibleFoods inedibleFoods = Repeater.repeatUntilNoException(
-                    () -> inputView.inputInedibleFoods(coachName));
-            coaches.add(new Coach(coachName, inputView.inputInedibleFoods(coachName)));
+            InedibleFoods inedibleFoods = Repeater.repeatUntilNoException(() -> inputView.inputInedibleFoods(coachName));
+            coaches.add(new Coach(coachName, inedibleFoods));
         }
 
         List<FoodCategory> foodCategories = new ArrayList<>();
