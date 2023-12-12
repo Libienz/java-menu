@@ -2,6 +2,7 @@ package menu.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SelectedCategories {
     private static final int MAX_SAME_CATEGORY_COUNT = 2;
@@ -18,5 +19,11 @@ public class SelectedCategories {
         return (int) menuCategories.stream()
                 .filter(menuCategory::equals)
                 .count();
+    }
+
+    public List<String> getSelectedCategoryNames() {
+        return menuCategories.stream()
+                .map(MenuCategory::getName)
+                .collect(Collectors.toList());
     }
 }
