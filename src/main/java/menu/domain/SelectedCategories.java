@@ -12,6 +12,7 @@ public class SelectedCategories {
         if (countSameCategory(menuCategory) > MAX_SAME_CATEGORY_COUNT) {
             return false;
         }
+        menuCategories.add(menuCategory);
         return true;
     }
 
