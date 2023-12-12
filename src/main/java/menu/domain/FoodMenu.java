@@ -60,10 +60,9 @@ public enum FoodMenu {
     WESTERN_MENU_6("바게트", ASIAN),
     WESTERN_MENU_7("스파게티", ASIAN),
     WESTERN_MENU_8("피자", ASIAN),
-    WESTERN_MENU_9("파니니", ASIAN),
-    ;
+    WESTERN_MENU_9("파니니", ASIAN);
 
-
+    private static final String NO_SUCH_FOOD_MESSAGE = "[ERROR] 해당하는 음식을 찾을 수 없습니다";
     private final String description;
     private final FoodCategory category;
 
@@ -78,6 +77,14 @@ public enum FoodMenu {
                 .map(FoodMenu::getDescription)
                 .collect(Collectors.toList());
     }
+
+    public static FoodMenu from(String foodName) {
+        return Arrays.stream(FoodMenu.values())
+                .filter(foodMenu -> foodMenu.description.equals(foodName))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(NO_SUCH_FOOD_MESSAGE));
+    }
+
     public String getDescription() {
         return description;
     }
